@@ -1,6 +1,6 @@
 # Página para el Clima.
 
-Página desarrollada em angular para utilizar una API del clima para mostrar el clima actual y el pronostico.
+Página desarrollada en angular para utilizar una API del clima para mostrar el clima actual y el pronostico.
 
 (El Proyecto se subio sin la carpeta node_modules)
 
