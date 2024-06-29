@@ -1,0 +1,120 @@
+
+  /* Alineación del botón "Agregar a Favoritos" a la derecha del título "Ciudades Favoritas" */
+  .derecha > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Asegura que el contenido de .derecha2 esté alineado al final */
+  .derecha2 {
+    text-align: right;
+  }
+  
+/*FIN BOTONES MENU ___________________________________________________________________________________________*/
+
+/*COMIENZO COLOCACION*/
+.wrapper {
+    display: flex;
+    justify-content: space-between; /* Distribuye los contenedores hacia los extremos */
+    align-items: flex-start; /* Alinea los contenedores al principio (misma altura) */
+    margin-top: 3%;
+    margin-left: 7%;
+    margin-right: 7%;
+    border: solid 1px rgba(255, 255, 255, 0.253);
+    /* backdrop-filter: blur(7px); */
+    /* box-shadow: linear-gradient(45deg, white, rgb(83, 113, 248), rgb(0, 8, 122)) 1; */
+  }
+  
+  /* Estilo para los contenedores */
+  .container1, .container2 {
+    display: block;
+    width: 48%; /* Ajusta el tamaño de los contenedores, asegurando que juntos ocupen menos del 100% */
+    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+    padding: 5%;
+  }
+  
+  /* Estilo específico para el contenido dentro de container2 */
+  .container2 {
+    padding-left: 20px; /* Añade espacio a la izquierda para separar del borde */
+  }
+
+  /* Estilo básico para la tabla en container2 */
+  table {
+    width: 100%; /* La tabla ocupará el ancho completo del contenedor */
+    border-collapse: collapse;
+    margin-top: 10px; /* Espacio superior a la tabla */
+  }
+  
+  table th, table td {
+    border: 1px solid #ddd; /* Bordes de las celdas */
+    padding: 8px; /* Espaciado en las celdas */
+  }
+  
+  table th {
+    background-color: #f2f2f2; /* Color de fondo para el encabezado */
+    text-align: left; /* Alineación del texto en el encabezado */
+  }
+  
+  .error {
+    padding: 2%;
+    margin-top: 5%;
+    color: red; /* Color para el texto de error */
+    background: transparent;
+    margin-right: 30%;
+    border: solid 1px rgb(28, 0, 128);
+    box-shadow: 0 0 2px rgb(0, 25, 165);
+  }
+  
+  .boton{
+    font-size: 1.2em;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    color: white;
+    background: none;
+    border: solid 1px black;
+    box-shadow: 1px 1px 2px rgb(0, 1, 77), -1px -1px 2px rgb(0, 1, 77);
+    text-shadow: 2px 2px 3px rgba(0, 10, 102, 0.486), -2px -2px 3px rgb(2, 0, 112)  ;
+    backdrop-filter: blur(5px); 
+  }
+  .boton:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+    background-color: rgb(0, 27, 122);
+  }
+  /*FINAL COLOCACION__________________________________________________________*/
+
+
+  body{
+    background-image: url('./assets/img/NocheTrue.jpg');
+    background-size: cover;
+  }
+
+  .boton2{
+    margin-top: 5%;
+    color: white;
+    background: none;
+    border: solid 1px black;
+    padding: 1% 2% 1% 2%;
+    border-radius: 15%;
+    box-shadow: 1px 1px 2px rgb(0, 1, 77), -1px -1px 2px rgb(0, 1, 77);
+    text-shadow: 2px 2px 3px rgba(0, 10, 102, 0.486), -2px -2px 3px rgb(2, 0, 112) ;
+    backdrop-filter: blur(5px); 
+  }
+  .boton2:hover{
+    transition: 0.3s;
+    background-color: rgb(0, 27, 122);
+    transform: scale(1.1);
+  }
+
+  h3{
+    color: white;
+  }
+
+  .eliminar{
+    color: white;
+    background-color: rgb(0, 151, 197);
+
+  }
+  .eliminar:hover{
+    background-color: rgb(143, 0, 0);
+  }

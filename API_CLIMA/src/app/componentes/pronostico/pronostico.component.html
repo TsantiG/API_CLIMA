@@ -1,0 +1,43 @@
+<div style="margin-top: 2em; margin-left: 2%;">
+    <a class="boton" style="text-decoration: none;" routerLink="/clima" >Clima Actual</a>
+</div>    
+    <div class="container1" style="margin-left: 24%;">
+
+      <div class="mostrarDatos" >
+        <h2 style=" margin-bottom: 15px;">Consulta de Clima por Ciudad</h2>
+        <form (submit)="buscarPronostico()">
+          <label for="ciudadInput">Ingresa el nombre de la ciudad:</label>
+          <input id="ciudadInput" type="text" [(ngModel)]="ciudad" name="ciudad" placeholder="Ciudad" required>
+          <button class="boton2" type="submit">Buscar</button>
+        </form>
+        
+        <div *ngIf="pronostico; else errorTemplate">
+          <h3>Información del clima en {{ pronostico.city.name }}</h3>
+
+            <label for="limite">Número de resultados a mostrar:</label>
+            <input type="number" class="limite" [(ngModel)]="limite" id="limite" min="1" max="40" /> 
+          <table>
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Temperatura</th>
+                <th>Clima</th>
+                <th>Humedad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of pronostico.list.slice(0, limite)">
+                <td>{{ item.dt_txt }}</td>
+                <td>{{ item.main.temp }} °C</td>
+                <td>{{ item.weather[0].description }}</td>
+                <td>{{ item.main.humidity }}%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <ng-template #errorTemplate>
+          <p *ngIf="error" class="error">{{ error }}</p>
+        </ng-template>
+      </div>
+    </div>

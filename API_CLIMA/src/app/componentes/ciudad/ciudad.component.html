@@ -1,0 +1,61 @@
+
+  <div class="wrapper">
+    <div class="container1">
+      <a class="boton" style="text-decoration: none;" routerLink="/pronostico" >Buscar Pronosticos</a>
+      <div class="mostrarDatos">
+        <h2 style="margin-top: 5%; margin-bottom: 15px;">Consulta de Clima por Ciudad</h2>
+        <form (submit)="buscarClima()">
+          <label for="ciudadInput">Ingresa el nombre de la ciudad:</label>
+          <input id="ciudadInput" type="text" [(ngModel)]="ciudad" name="ciudad" placeholder="Ingrese La ciudad" required>
+          <button class="boton2" type="submit">Buscar</button>
+        </form>
+        
+        <div *ngIf="climaActual; else errorTemplate">
+          <h3>Información del clima en {{ climaActual.name }}</h3>
+          <ul class="list-group">
+            <li id="lista" class="list-group-item"><img class="icono" src="../../../assets/img/nubes.png" alt="">  {{ climaActual.weather[0].description }}</li>
+            <li id="lista"  class="list-group-item"><img class="icono" src="../../../assets/img/alta-temperatura.png" alt=""> Temperatura: {{ climaActual.main.temp }} °C</li>
+            <li id="lista"  class="list-group-item"><img class="icono" src="../../../assets/img/humedad.png" alt=""> Humedad: {{ climaActual.main.humidity }} %</li>
+            <li id="lista"  class="list-group-item"><img class="icono" src="../../../assets/img/viento.png" alt=""> Viento: {{ climaActual.wind.speed }} m/s</li>
+          </ul>
+         
+        </div>
+        
+        <ng-template #errorTemplate>
+          <p *ngIf="error" class="error">{{ error }}</p>
+        </ng-template>
+      </div>
+    </div>
+
+    <div class="container2">
+      <div class="derecha">
+        <div>
+          <h2>Ciudades Favoritas</h2>
+          <div class="derecha2">
+            <button class="boton" (click)="agregarAFavoritos()">Agregar a Favoritos</button>
+          </div>
+        </div>
+        <table *ngIf="favoritos.length > 0">
+          <thead>
+            <tr>
+              <th>Ciudad</th>
+              <th>Temperatura (°C)</th>
+              <th>Viento (m/s)</th>
+              <th>Humedad (%)</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let favorito of favoritos | slice:0:limite; let i = index">
+              <td>{{ favorito.ciudad }}</td>
+              <td>{{ favorito.temperatura }}</td>
+              <td>{{ favorito.viento }}</td>
+              <td>{{ favorito.humedad }}</td>
+              <td><button class="eliminar" (click)="eliminarFavorito(i)">Eliminar</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <p *ngIf="favoritos.length === 0">No hay ciudades favoritas.</p>
+      </div>
+    </div>
+  </div>

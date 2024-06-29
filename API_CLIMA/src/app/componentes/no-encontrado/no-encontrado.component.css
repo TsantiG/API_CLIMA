@@ -1,0 +1,19 @@
+.centrar{
+    margin-top: 5%;
+    margin-left: 40%;
+    margin-top: 5%;
+}
+
+.imagen-inicio{
+    height: 210px;
+    aspect-ratio: 2.1/2;
+    border-radius: 25%;
+    filter: drop-shadow(15px 10px 4px rgb(0, 73, 181));
+    border: solid 1px black;
+}
+
+.botones{
+    display: flex;
+    justify-content: space-between; /* Distribuye los contenedores hacia los extremos */
+    align-items: flex-start;
+}
